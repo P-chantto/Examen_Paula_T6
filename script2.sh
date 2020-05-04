@@ -3,16 +3,15 @@ contador=0
 
 for i in $(cat procesos.txt | awk '{print $2}') ;do
 
-if [ $v1 -lt $i ] 
-then
-contador=$((contador=+1))
+if [ $i -gt $v1 ]; then
+contador=$((contador+1))
 
-else
+elif [ $i -lt $v1 ]; then
 
 echo "no hay ningun PID"
 exit
 
-$i
+fi
 
 fi
 
